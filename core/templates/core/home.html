@@ -1,9 +1,14 @@
-TEST HOME PAGE - DO NOT USE IN PRODUCTION
 
+
+{% include './header.html' %}
+<img src="/media/SEA_COLONY_TRAM.jpg" style="width:100%;">
+<div style="height:20px;background-color:#aa0000"></div>
 
 {% for object in objects %}
 <p>{{ object.shortTitle }}</p>
 {% endfor %}
+
+
 <form  enctype="multipart/form-data" action="{% url 'core:upload' %}" method="POST">
 {% csrf_token %}
 <input type="file" name="file"><input type="submit">
