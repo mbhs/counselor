@@ -4,3 +4,7 @@ TEST HOME PAGE - DO NOT USE IN PRODUCTION
 {% for object in objects %}
 <p>{{ object.shortTitle }}</p>
 {% endfor %}
+<form  enctype="multipart/form-data" action="{% url 'core:upload' %}" method="POST">
+{% csrf_token %}
+<input type="file" name="file"><input type="submit">
+</form>
