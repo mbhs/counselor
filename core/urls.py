@@ -6,4 +6,5 @@ app_name = "core"
 urlpatterns = [
     path('', views.index, name='index'),
     path('upload/', views.processFile, name='upload'),
+    path('page/<str:st>/', views.contentPage, name='content'),
 ]

@@ -12,3 +12,6 @@ def processFile(request):
     file = request.FILES["file"]
     File(file=file).save()
     return HttpResponseRedirect(reverse("core:index"))
+
+def contentPage(request,st):
+    return render(request,"core/content.html",{"objects":TextPage.objects.order_by('numId'),"text":get_object_or_404(TextPage,shortTitle=st )})
