@@ -9,8 +9,17 @@ class TextPage(models.Model):
     def __str__(self):
         return self.shortTitle
 
+    
+class Event(models.Model):
+    date = models.DateField()
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    def __str__(self):
+        return self.title
+
+
 class File(models.Model):
     file = models.FileField()
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
     def __str__(self):
         return self.file.url
-    

@@ -1,4 +1,10 @@
 {% include './header.html' %}
 {% include './sidebar.html' %}
 
-{{text.content}}
+<p style="font-size:50px;color:#700;margin:0">{{text.title}}</p>
+<div style="text-align:left;padding-left:20px;padding-right:20px">
+{% load bbcode_tags %}
+{% bbcode entry.bbcode_content %}
+
+<p>{{ text.content|bbcode|safe }}</p>
+</div>

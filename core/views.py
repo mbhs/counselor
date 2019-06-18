@@ -15,3 +15,6 @@ def processFile(request):
 
 def contentPage(request,st):
     return render(request,"core/content.html",{"objects":TextPage.objects.order_by('numId'),"text":get_object_or_404(TextPage,shortTitle=st )})
+
+def listEvents(request):
+    return render(request,"core/calendar.html",{"objects":TextPage.objects.order_by('numId'),"events":Event.objects.order_by("date")})
