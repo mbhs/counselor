@@ -1,0 +1,30 @@
+<style>
+.menuLink {background-color:#770000;color:#eeeeee;text-decoration:none;}
+.menuLink2 {background-color:#880000;color:#eeeeee;text-decoration:none;}
+
+.menuLink:hover {background-color:#880000;color:#eeeeee;text-decoration:none;}
+
+.BLACKmenuLink {background-color:#111111;color:#eeeeee;text-decoration:none;}
+.BLACKmenuLink2 {background-color:#222222;color:#eeeeee;text-decoration:none;}
+
+.BLACKmenuLink:hover {background-color:#222222;color:#eeeeee;text-decoration:none;}
+
+</style>
+<div style="max-width:1100;text-align:center;align:center;margin: 0 auto;background-color:#ffffff;">
+<div class="w3-bar-block" style="width:200;background-color:#dddddd">
+<span class="w3-bar-item  menuLink2">Counseling</span>
+<div style="height:1px"></div>
+{% for object in objects %}
+<a class="w3-bar-item  menuLink" href="{% url 'core:content' object.shortTitle %}">{{ object.shortTitle }}</a>
+<div style="height:1px"></div>
+
+{% endfor %}
+<div style="height:20px"></div>
+<span class="w3-bar-item  BLACKmenuLink2">External Links</span>
+<div style="height:1px"></div>
+
+<a class="w3-bar-item  BLACKmenuLink" href="https://mbhs.edu">MBHS Home</a>
+</div>
+
+
+<div style="margin-left:200px">

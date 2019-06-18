@@ -2,11 +2,10 @@
 
 {% include './header.html' %}
 <img src="/media/SEA_COLONY_TRAM.jpg" style="width:100%;">
-<div style="height:20px;background-color:#aa0000"></div>
+<div style="height:20px;background-color:#aa0000;margin:0"></div>
 
-{% for object in objects %}
-<p><a href={% url 'core:content' object.shortTitle %}>{{ object.shortTitle }}</a></p>
-{% endfor %}
+
+{% include './sidebar.html' %}
 
 
 <form  enctype="multipart/form-data" action="{% url 'core:upload' %}" method="POST">
