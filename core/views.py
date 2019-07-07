@@ -9,6 +9,7 @@ def index(request):
     return render(request,"core/home.html",{"objects":TextPage.objects.order_by('numId')})
 
 def processFile(request):
+    
     file = request.FILES["file"]
     File(file=file).save()
     return HttpResponseRedirect(reverse("core:index"))
