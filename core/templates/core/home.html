@@ -9,29 +9,3 @@
 
 
 
-<p style="font-size:50px;color:#700;margin:0">Add/Edit Event</p>
-
-<div style="text-align:left;padding-left:20px;padding-right:20px">
-
-
-<form id="eventForm" style=";align:left" enctype="multipart/form-data" action="{% url 'core:upload' %}" method="POST">
-{% csrf_token %}
-<input required name="Title" style="width:100%;padding:10px;" type="text" placeholder="Event Name"><br><br>
-<div class="w3-responsive">
-<input required class="w3-third" name="month" style="padding:10px;" type="number" min="1" max="12" placeholder="MM">
-<input required class="w3-third" name="day" style="padding:10px;" type="number" min="1" max="31" placeholder="DD">
-<input required class="w3-third" name="year" style="padding:10px;" type="number" min="0" max="9999" placeholder="YYYY"><br><br><br>
-
-<textarea form="eventForm" style="height:300px;width:100%" name="Title" style="width:100%;padding:10px;" type="text" placeholder="Event Description"></textarea><br>
-<br>
-</div>
-<input style="background-color:#ddd;padding:10px" id="fileUP" type="file" name="file"><br id="endForm"><input type="button" onclick="addFile()" style=";margin:10px" value="Add File"><input style=";margin:10px" type="submit" value="Save">
-
-</form>
-
-<script>
-function addFile() {
-document.getElementById("endForm").insertAdjacentHTML( 'beforebegin', '<input id="fileUP" type="file" name="file">' );
-}
-</script>
-</div>

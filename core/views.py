@@ -8,6 +8,13 @@ def index(request):
     #Render links IN ORDER!
     return render(request,"core/home.html",{"objects":TextPage.objects.order_by('numId')})
 
+
+def eventForm(request):
+    if request.user == None:
+        return
+    return render(request,"core/addForm.html",{"objects":TextPage.objects.order_by('numId')})
+
+
 def processFile(request):
     
     file = request.FILES["file"]
