@@ -1,7 +1,61 @@
 
 
 {% include './header.html' %}
-<img src="/media/SEA_COLONY_TRAM.jpg" style="width:100%;">
+<table width="75%" border="1" align="center">
+    <tbody><tr>
+      <th width="33%" valign="top" scope="col">Student's Last
+        Name Begins With:</th>
+      <th width="33%" valign="top" scope="col">Counselor</th>
+    </tr>
+    <tr>
+      <td width="33%" valign="top">A-Bl</td>
+      <td width="33%" valign="top">Ms. Raolat Agbedina</td>
+    </tr>
+    <tr>
+      <td width="33%" valign="top">Bm-C</td>
+      <td width="33%" valign="top">Mr. Kirk Simms</td>
+    </tr>
+    <tr>
+      <td width="33%" valign="top">D-F</td>
+      <td width="33%" valign="top">Mr. Kareef Overton</td>
+    </tr>
+    <tr>
+      <td width="33%" valign="top">G-He</td>
+      <td width="33%" valign="top">Ms. Emily Putney</td>
+    </tr>
+    <tr>
+      <td width="33%" valign="top">Hf-La</td>
+      <td width="33%" valign="top">Mr. Timothy Rossini</td>
+    </tr>
+    <tr>
+      <td width="33%" valign="top">Lb-Mg</td>
+      <td width="33%" valign="top">Ms. Mackenzie Cho</td>
+    </tr>
+    <tr>
+      <td width="33%" valign="top">Mh-Pe</td>
+      <td width="33%" valign="top">Mr. Alphonso Burwell</td>
+    </tr>
+    <tr>
+      <td width="33%" valign="top">Pf-Sa</td>
+      <td width="33%" valign="top">Ms. Antia Reddicks</td>
+    </tr>
+    <tr>
+      <td valign="top">Sb-Ts</td>
+      <td valign="top">Ms. Rachel Greene</td>
+    </tr>
+    <tr>
+      <td width="33%" valign="top">Tt-Z</td>
+      <td width="33%" valign="top">Ms. Belvey Russ</td>
+    </tr>
+    <tr>
+      <td valign="top">METS and ESOL 1-3 Students</td>
+      <td valign="top">Ms. Lia Contreras</td>
+    </tr>
+    <tr>
+      <td valign="top">ESOL 4-5</td>
+      <td valign="top">Ms. Jennifer Poole</td>
+    </tr>
+  </tbody></table>
 <div style="height:20px;background-color:#aa0000;margin:0"></div>
 
 
@@ -9,29 +63,3 @@
 
 
 
-<p style="font-size:50px;color:#700;margin:0">Add/Edit Event</p>
-
-<div style="text-align:left;padding-left:20px;padding-right:20px">
-
-
-<form id="eventForm" style=";align:left" enctype="multipart/form-data" action="{% url 'core:upload' %}" method="POST">
-{% csrf_token %}
-<input required name="Title" style="width:100%;padding:10px;" type="text" placeholder="Event Name"><br><br>
-<div class="w3-responsive">
-<input required class="w3-third" name="month" style="padding:10px;" type="number" min="1" max="12" placeholder="MM">
-<input required class="w3-third" name="day" style="padding:10px;" type="number" min="1" max="31" placeholder="DD">
-<input required class="w3-third" name="year" style="padding:10px;" type="number" min="0" max="9999" placeholder="YYYY"><br><br><br>
-
-<textarea form="eventForm" style="height:300px;width:100%" name="Title" style="width:100%;padding:10px;" type="text" placeholder="Event Description"></textarea><br>
-<br>
-</div>
-<input style="background-color:#ddd;padding:10px" id="fileUP" type="file" name="file"><br id="endForm"><input type="button" onclick="addFile()" style=";margin:10px" value="Add File"><input style=";margin:10px" type="submit" value="Save">
-
-</form>
-
-<script>
-function addFile() {
-document.getElementById("endForm").insertAdjacentHTML( 'beforebegin', '<input id="fileUP" type="file" name="file">' );
-}
-</script>
-</div>
