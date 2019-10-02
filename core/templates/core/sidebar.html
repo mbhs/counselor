@@ -1,6 +1,6 @@
 <style>
 
-.w3-card {background-color: #770000;color:#eeeeee;text-decoration:none;}
+.container {background-color: #770000;color:#eeeeee;text-decoration:none;}
 .menuLink {background-color:#770000;color:#eeeeee;text-decoration:none;}
 .menuLink2 {background-color:#880000;color:#eeeeee;text-decoration:none;}
 
@@ -13,35 +13,40 @@
 
 </style>
 <div style="max-width:1100;text-align:center;align:center;margin: 0 auto;background-color:#eeeeee;">
-<div class="w3-bar-block" style="position:absolute;width:200;background-color:#eeeeee">
-<div style="height:20px"></div>
+    <div class="w3-bar-block" style="position:absolute;width:200;background-color:#eeeeee">
+        <div style="height:20px"></div>
 
-<a class="w3-bar-item  menuLink" href="{%url 'core:events' %}">Home</a>
-<div style="height:1px"></div>
-<a class="w3-bar-item  menuLink" href="{% url 'core:events' %}">Events</a>
-<div style="height:1px"></div>
+        <a class="w3-bar-item  menuLink" href="{%url 'core:events' %}">HOME</a>
+        <div style="height:1px"></div>
+        <a class="w3-bar-item  menuLink" href="{% url 'core:events' %}">Events</a>
+        <div style="height:1px"></div>
 
-{% for object in objects %}
-<a class="w3-bar-item  menuLink" href="{% url 'core:content' object.shortTitle %}">{{ object.shortTitle }}</a>
-<div style="height:1px"></div>
+        {% for object in objects %}
+        <a class="w3-bar-item  menuLink" href="{% url 'core:content' object.shortTitle %}">{{ object.shortTitle }}</a>
+        <div style="height:1px"></div>
 
-{% endfor %}
-<div style="height:20px"></div>
-<span class="w3-bar-item  BLACKmenuLink2">External Links</span>
-<div style="height:1px"></div>
+        {% endfor %}
+        <div style="height:20px"></div>
+        <span class="w3-bar-item  BLACKmenuLink2">External Links</span>
+         <div style="height:1px"></div>
 
-<a class="w3-bar-item  BLACKmenuLink" href="https://mbhs.edu">MBHS Home</a>
-<div style="height:1px"></div>
-<a class="w3-bar-item  BLACKmenuLink" href="https://student.naviance.com/mbhs">Naviance</a>
-<div style="height:1px"></div>
-<a class="w3-bar-item BlackmenuLink" href="login">College Board</a>x
-</div>
-
-<div style="margin-right: 50px; background-color: #eeeeee">
-    <div class = "w3-panel w3-card">
-    <a class="twitter-timeline" data-width="300" href="https://twitter.com/MBHSCounseling?ref_src=twsrc%5Etfw">Follow @MBHSCounseling On Twitter</a> 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="w3-bar-item  BLACKmenuLink" href="https://mbhs.edu">MBHS Home</a>
+        <div style="height:1px"></div>
+        <a class="w3-bar-item  BLACKmenuLink" href="https://student.naviance.com/mbhs">Naviance</a>
+        <div style="height:1px"></div>
+        <a class="w3-bar-item BlackmenuLink" href="login">College Board</a>
     </div>
+
+    <div style="height:20px"></div>
+
+    <div class = "w3-card-4"></div>
+        <div class = "w3-container container">
+        
+          <a class="twitter-timeline" data-width="300" href="https://twitter.com/MBHSCounseling?ref_src=twsrc%5Etfw">Follow @MBHSCounseling On Twitter</a> 
+         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+
 </div>
 
 <div style="margin-left:200px;background-color:#eeeeee"> 
