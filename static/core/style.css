@@ -1,0 +1,54 @@
+body {
+    font-family: "Tahoma", Geneva, sans-serif;
+    background-color: #eeeeee;
+    margin: 0; 
+    padding: 0;
+}
+
+.menuLink {background-color:#770000;color:#eeeeee;text-decoration:none;}
+.menuLink2 {background-color:#880000;color:#eeeeee;text-decoration:none;}
+
+.menuLink:hover {background-color:#880000;color:#eeeeee;text-decoration:none;}
+
+.BLACKmenuLink {background-color:#111111;color:#eeeeee;text-decoration:none;}
+.BLACKmenuLink2 {background-color:#222222;color:#eeeeee;text-decoration:none;}
+
+.BLACKmenuLink:hover {background-color:#222222;color:#eeeeee;text-decoration:none;}
+
+.content {
+    margin-top: 80px;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+.logo {
+    position: relative;
+    width: 80px; 
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.27)
+}
+
+.nav {
+    background-color:  #aa0000;
+}
+
+.nav.nav-pills .nav-link {
+    border-radius: 0;
+    color: white;
+    font-size: 1.2vw;
+    padding: 25px;
+}
+
+.nav.nav-pills .nav-link:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.nav.nav-pills .nav-link.active {
+    color: ;
+    background-color: #990000;
+}
