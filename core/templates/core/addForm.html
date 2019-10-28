@@ -1,12 +1,5 @@
-
-
 {% include './header.html' %}
-
-
 {% include './sidebar.html' %}
-
-
-
 
 
 <p style="font-size:50px;color:#700;margin:0">Add/Edit Event</p>
@@ -14,7 +7,7 @@
 <div style="text-align:left;padding-left:20px;padding-right:20px">
 
 
-<form id="eventForm" style=";align:left" enctype="multipart/form-data" action="{% url 'core:upload' %}" method="POST">
+<form id="eventForm" align="left" enctype="multipart/form-data" action="{% url 'core:upload' %}" method="POST">
 {% csrf_token %}
 <input required name="Title" style="width:100%;padding:10px;" type="text" placeholder="Event Name"><br><br>
 <div class="w3-responsive">
@@ -25,7 +18,7 @@
 <textarea form="eventForm" style="height:300px;width:100%" name="Title" style="width:100%;padding:10px;" type="text" placeholder="Event Description"></textarea><br>
 <br>
 </div>
-<input style="background-color:#ddd;padding:10px" id="fileUP" type="file" name="file"><br id="endForm"><input type="button" onclick="addFile()" style=";margin:10px" value="Add File"><input style=";margin:10px" type="submit" value="Save">
+<input style="background-color:#ddd;padding:10px" id="fileUP" type="file" name="file"><br id="endForm"><input type="button" onclick="addFile()" style="margin:10px" value="Add File"><input style="margin:10px" type="submit" value="Save">
 
 </form>
 

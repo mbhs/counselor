@@ -25,7 +25,7 @@ SECRET_KEY = 'cpi_f&ptw=hk_h6o62rq1w_b8=y6y@vv=c&exhuqsl$9tuq4##'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*.*","*","0.0.0.0"]
 
 
 # Application definition

@@ -2,22 +2,51 @@
 <div class="w3-bar-block" style="position:absolute;width:200;background-color:#eeeeee">
 <div style="height:20px"></div>
 
-<span class="w3-bar-item  menuLink2">Counseling</span>
-<div style="height:1px"></div>
-<a class="w3-bar-item  menuLink" href="{% url 'core:events' %}">Events</a>
-<div style="height:1px"></div>
 
-{% for object in objects %}
-<a class="w3-bar-item  menuLink" href="{% url 'core:content' object.shortTitle %}">{{ object.shortTitle }}</a>
-<div style="height:1px"></div>
+<div style="width:100%;text-align:center;align-self:center;margin: 0 auto;background-color:#eeeeee;">
+    
+    
+    <div class="w3-bar-block" style="margin-left:25px;padding-right:20px;position:absolute;width:200;background-color:#eeeeee">
+        <div style="height:20px"></div>
 
-{% endfor %}
-<div style="height:20px"></div>
-<span class="w3-bar-item  BLACKmenuLink2">External Links</span>
-<div style="height:1px"></div>
+        
+        <a class="w3-bar-item  menuLink" href="{%url 'core:index' %}">Home</a>
+        <div style="height:1px"></div>
+        
+        <a class="w3-bar-item  menuLink" href="{% url 'core:events' %}">Events</a>
+        <div style="height:1px"></div>
 
-<a class="w3-bar-item  BLACKmenuLink" href="https://mbhs.edu">MBHS Home</a>
+        {% for object in objects %}
+        <a class="w3-bar-item  menuLink" href="{% url 'core:content' object.shortTitle %}">{{ object.shortTitle }}</a>
+        <div style="height:1px"></div>
+
+        {% endfor %}
+
+        <div style="height:20px"></div>
+
+        <span class="w3-bar-item  BLACKmenuLink2">External Links</span>
+         <div style="height:1px"></div>
+
+        <a class="w3-bar-item  BLACKmenuLink" href="https://mbhs.edu">MBHS Home</a>
+        <div style="height:1px"></div>
+
+        <a class="w3-bar-item  BLACKmenuLink" href="https://student.naviance.com/mbhs">Naviance</a>
+        <div style="height:1px"></div>
+
+        <a class="w3-bar-item BlackmenuLink" href="login">College Board</a>
+   
+    </div>
+
+    <div style="height:20px"></div>
+
 </div>
 
+<div class = "w3-card-4 w3-theme w3-right" align="center" style="width:350px;margin-right:25px">
+        <div style="height:5px"></div>
+            <a class="twitter-timeline" data-width="300" href="https://twitter.com/MBHSCounseling?ref_src=twsrc%5Etfw">
+            </a> 
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>  
+    </div>
 
-<div style="margin-left:200px;background-color:#eeeeee">
+<div style="margin-left:220px">
