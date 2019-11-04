@@ -23,6 +23,7 @@ header {
     position: fixed;
     top: 0px;
     width: 100%;
+    z-index: 2000;
 }
 
 .logo {
@@ -33,7 +34,7 @@ header {
 }
 
 .nav {
-    background-color:  #aa0000;
+    background-color:  #af0000;
 }
 
 .nav.nav-pills .nav-link {
@@ -44,11 +45,34 @@ header {
 }
 
 .nav.nav-pills .nav-link:hover {
-    color: white;
     background-color: rgba(0, 0, 0, 0.07);
 }
 
 .nav.nav-pills .nav-link.active {
-    color: ;
     background-color: #990000;
+}
+
+.list-group-item.list-group-item-action.active {
+    background-color: #990000;
+}
+
+.list-group-item.list-group-item-action {
+    background-color:  #af0000;
+    color: white;
+    border: none;
+}
+
+.list-group {
+    background-color: #af0000;
+}
+
+.list-group-item.list-group-item-action:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+    color: white;
+    border: none;
+}
+
+thead.thead-red {
+    background-color:  #af0000;
+    color: white;
 }
