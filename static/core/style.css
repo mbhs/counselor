@@ -76,3 +76,8 @@ thead.thead-red {
     background-color:  #af0000;
     color: white;
 }
+
+.headerText {
+    color:  #af0000;
+    font-size: 35px;
+}

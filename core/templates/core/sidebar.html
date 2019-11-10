@@ -1,6 +1,6 @@
 <div class="list-group float-left">
     <a id="homePageLink" href="{% url 'core:index' %}" class="list-group-item list-group-item-action">Home</a>
-    <a id="eventsLink" href="#" class="list-group-item list-group-item-action">Events</a>
+    <a id="eventsLink" href="{% url 'core:events' %}" class="list-group-item list-group-item-action">Events</a>
     {% for object in objects %}
     <a id="sidelink-{{object.id}}" href="{% url 'core:content' object.shortTitle %}" class="list-group-item list-group-item-action">{{ object.shortTitle }}</a>
     {% endfor %}
