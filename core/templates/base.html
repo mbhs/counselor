@@ -15,9 +15,15 @@
 </head>
 
 {% include 'core/header.html' %}
-<body>
+<body id="mainBody" style="position:relative;top:50px">
     {% block body %}
     {% endblock %}
 </body>
+
+<script type="text/javascript">
+	var height=document.getElementById('mainHeader').offsetHeight;
+	document.getElementById('mainBody').style.top = height+"px"
+	
+</script>
         
 </html>
