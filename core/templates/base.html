@@ -15,15 +15,19 @@
 </head>
 
 {% include 'core/header.html' %}
-<body id="mainBody" style="position:relative;top:50px">
+<body id="mainBody" style="position:relative;top:50px" onresize="adjustheader()">
     {% block body %}
     {% endblock %}
 </body>
 
 <script type="text/javascript">
+
+function adjustheader() {
 	var height=document.getElementById('mainHeader').offsetHeight;
-	document.getElementById('mainBody').style.top = height+"px"
-	
+	document.getElementById('mainBody').style.top = height+"px";
+}
+
+adjustheader();
 </script>
         
 </html>
