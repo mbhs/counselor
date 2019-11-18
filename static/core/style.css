@@ -33,6 +33,13 @@ header {
     background-color: rgba(0, 0, 0, 0.27)
 }
 
+.sticky-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+
 .nav {
     background-color:  #af0000;
 }
@@ -42,10 +49,12 @@ header {
     color: white;
     font-size: 1.2vw;
     padding: 25px;
+    transition: background-color 0.5s;
 }
 
 .nav.nav-pills .nav-link:hover {
     background-color: rgba(0, 0, 0, 0.07);
+    transition: background-color 0.5s;
 }
 
 .nav.nav-pills .nav-link.active {
@@ -60,6 +69,7 @@ header {
     background-color:  #af0000;
     color: white;
     border: none;
+    transition: background-color 0.5s;
 }
 
 .list-group {
@@ -70,9 +80,15 @@ header {
     background-color: rgba(0, 0, 0, 0.07);
     color: white;
     border: none;
+    transition: background-color 0.5s
 }
 
 thead.thead-red {
     background-color:  #af0000;
     color: white;
+}
+
+.headerText {
+    color:  #af0000;
+    font-size: 35px;
 }

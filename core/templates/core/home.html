@@ -6,10 +6,11 @@
 <div style="height:20px;background-color:#aa0000;margin:0"></div>
 
 <!-- Actual Body -->
+{% include 'core/sidebar.html' %}
 <div class="container-fluid ml-0 pt-3 mr-0" style="z-index:1">  
     <div class="row">
         <div class="col-2">
-            {% include 'core/sidebar.html' %}
+            
         </div>
         <div class="col-5">
             <table class="table table-striped">
@@ -73,5 +74,8 @@
     </div>
 </div>
 
+<script>
+document.getElementById("homePageLink").classList.add("active");
+</script>
 
 {% endblock %}

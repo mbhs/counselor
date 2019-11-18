@@ -22,5 +22,15 @@
         {% endblock %}
     </div>
 </body>
+
+<script type="text/javascript">
+
+function adjustheader() {
+	var height=document.getElementById('mainHeader').offsetHeight;
+	document.getElementById('mainBody').style.top = height+"px";
+}
+
+adjustheader();
+</script>
         
 </html>

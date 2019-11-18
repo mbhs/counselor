@@ -1,6 +1,11 @@
-{% include './header.html' %}
-{% include './sidebar.html' %}
+{% extends 'base.html' %}
 
+<!--{% include './header.html' %}-->
+<!--{% include './sidebar.html' %}-->
+
+
+{% block body %}
+{% include 'core/sidebar.html' %}
 <div class = "container" style="width:100%"></div>
     <p style="text-align:center;font-size: 50px;color:#700;margin:0">{{text.title}}</p>
       <div style="text-align:left;padding-left:15px;padding-right:20px">
@@ -10,3 +15,10 @@
         <p>{{ text.content|bbcode|safe }}</p>
     </div>
 </div>
+
+<script>
+document.getElementById("sidelink-{{text.id}}").classList.add("active");
+</script>
+
+
+{% endblock %}
