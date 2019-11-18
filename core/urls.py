@@ -9,5 +9,5 @@ urlpatterns = [
     path('add/', views.eventForm, name='addForm'),
     path('upload/', views.processFile, name='upload'),
     path('events/', views.listEvents, name='events'),
-    path('page/<str:st>/', views.contentPage, name='content'),
+    path('<str:st>/', views.contentPage, name='content'),
 ]

@@ -63,6 +63,7 @@ header {
 
 .list-group-item.list-group-item-action.active {
     background-color: #990000;
+    border: none;
 }
 
 .list-group-item.list-group-item-action {
@@ -74,6 +75,7 @@ header {
 
 .list-group {
     background-color: #af0000;
+    border: none;
 }
 
 .list-group-item.list-group-item-action:hover {
