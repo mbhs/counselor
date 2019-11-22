@@ -10,7 +10,7 @@
 </div>
 <div class="row">
   <div class="col-6">
-    <table class="table table-striped">
+    <table class="table table-striped nameTable">
       <thead class="thead-red">
         <tr>
           <th scope="col">Student's Last Name</th>
@@ -68,7 +68,13 @@
     </tbody>
   </table>
 </div>
-
+<div class="col-6" style="height:500px">
+<a class="twitter-timeline" href="https://twitter.com/MBHSCounseling?ref_src=twsrc%5Etfw">Tweets by MBHSCounseling</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 <!-- NECESSARY STUFF -->
 {% endblock %}
 <!-- NECESSARY STUFF -->
+
+<script>
+document.getElementById("twitter-timeline").dataHeight = document.getElementById("nameTable").offsetHeight;
+
+</script>
