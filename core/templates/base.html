@@ -14,9 +14,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 
-{% include 'core/header.html' %}
 <body>
-    <div class="content">
+{% include 'core/header.html' %}
+
+    <div id="mainContent" class="content">
             <div class="container-fluid ml-0 pt-3 mr-0" style="z-index:1"> 
                     <div class="row">
                         <div class="col-2">
@@ -32,4 +33,12 @@
     </div>
 </body>
         
+<script>
+function headerPush() {
+    document.getElementById("mainContent").style.marginTop = document.getElementById("mainHeader").offsetHeight + "px";
+}
+headerPush();
+document.getElementById("mainContent").onresize =headerPush;
+</script>
+
 </html>

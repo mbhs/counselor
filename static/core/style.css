@@ -15,9 +15,6 @@ body {
 
 .BLACKmenuLink:hover {background-color:#222222;color:#eeeeee;text-decoration:none;}
 
-.content {
-    margin-top: 80px;
-}
 
 header {
     position: fixed;
