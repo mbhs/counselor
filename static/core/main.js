@@ -13,3 +13,4 @@ if (scrollPosition > 100){
 else {
     document.querySelector('header').classList.remove('sticky');
 }
+
