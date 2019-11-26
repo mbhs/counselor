@@ -6,7 +6,7 @@ from .forms import *
 # Create your views here.
 def index(request):
     #Render links IN ORDER!
-    return render(request,"core/home.html",{"objects":TextPage.objects.order_by('numId')})
+    return render(request,"core/home.html",{"objects":TextPage.objects.order_by('numId'),"events":Event.objects.order_by("date")})
 
 
 def eventForm(request):
