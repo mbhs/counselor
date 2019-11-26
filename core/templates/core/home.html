@@ -71,7 +71,6 @@
 <div class="col-6" style="height:500px">
 <a id="twitter-timeline" class="twitter-timeline" href="https://twitter.com/MBHSCounseling?ref_src=twsrc%5Etfw" data-height="800">Tweets by MBHSCounseling</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 <!-- NECESSARY STUFF -->
-{% endblock %}
 <!-- NECESSARY STUFF -->
 
 <div class="col-6">
@@ -80,7 +79,7 @@
 <div class="card-body">
 <div style="text-align:left;padding-left:20px;padding-right:20$
 <p class="card-title headerText">{{event.title}}</p>
-<p style="font-size:25px;color:#700;margin:0"><b>{{event.date.$
+<p style="font-size:25px;color:#700;margin:0"><b>{{event.date}}</b></p>
 <p>{{event.content}}</p>
 
 </div>
@@ -94,3 +93,4 @@ alert(document.getElementById("nameTable").offsetHeight);
 document.getElementById("twitter-timeline").data-height = document.getElementById("nameTable").offsetHeight;
 alert(document.getElementById("twitter-timeline").data-height);
 </script>
+{% endblock %}
