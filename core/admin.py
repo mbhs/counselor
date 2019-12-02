@@ -15,3 +15,4 @@ class EventAdmin(admin.ModelAdmin):
 admin.site.register(Event,EventAdmin)
 
 admin.site.register(File)
+admin.site.site_header = "MBHS Counseling admin"
