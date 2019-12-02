@@ -35,4 +35,5 @@ def listEvents(request):
     f = []
     for count in range(7):
         f = f + list(Event.objects.filter(date=(d+datetime.timedelta(days=count))))
-    return render(request,"core/calendar.html",{"objects":TextPage.objects.order_by('numId'),"events":f})
+    g = Event.objects.filter(date__gte=d+datetime.timedelta(days=7))
+    return render(request,"core/calendar.html",{"objects":TextPage.objects.order_by('numId'),"today":e,"thisWeek":f,"upcoming":g})
