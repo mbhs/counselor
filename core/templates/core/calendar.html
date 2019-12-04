@@ -2,17 +2,22 @@
 {% extends 'base.html' %}
 
 {% block body %}
+{% load tz %}
+
 <!-- NECESSARY STUFF -->
 
-<p style="font-size:50px;color:#700;margin:0">Today's Events</p>
+<!--<p style="font-size:50px;color:#700;margin:0">Today's Events</p>-->
 
-{% for event in today%}
+<!--{% for event in today %}
 <div class="card">
 <div class="card-body">
 <div style="text-align:left;padding-left:20px;padding-right:20px">
 <p class="card-title headerText">{{event.title}}</p>
-<p style="font-size:25px;color:#700;margin:0"><b>{{event.date.month}}/{{event.date.day}}/{{event.date.year}}</b> | </p>
+{% timezone "America/New_York" %}
+
+<p style="font-size:25px;color:#700;margin:0"><b>{{event.date.month}}/{{event.date.day}}/{{event.date.year}}</b> | {{event.date.hour}}:{{event.date.minute}}</p>
 <p>{{event.content}}</p>
+{% endtimezone %}
 
 </div>
 </div>
@@ -28,7 +33,7 @@
 {% endif %}-->
 
 
-{% endfor %}
+{% endfor %}-->
 
 <p style="font-size:50px;color:#700;margin:0">This Week's Events</p>
 
@@ -37,8 +42,11 @@
 <div class="card-body">
 <div style="text-align:left;padding-left:20px;padding-right:20px">
 <p class="card-title headerText">{{event.title}}</p>
-<p style="font-size:25px;color:#700;margin:0"><b>{{event.date.month}}/{{event.date.day}}/{{event.date.year}}</b> | </p>
+{% timezone "America/New_York" %}
+
+<p style="font-size:25px;color:#700;margin:0"><b>{{event.date}}</b></p>
 <p>{{event.content}}</p>
+{% endtimezone %}
 
 </div>
 </div>
@@ -64,8 +72,11 @@
 <div class="card-body">
 <div style="text-align:left;padding-left:20px;padding-right:20px">
 <p class="card-title headerText">{{event.title}}</p>
-<p style="font-size:25px;color:#700;margin:0"><b>{{event.date.month}}/{{event.date.day}}/{{event.date.year}}</b> | </p>
+{% timezone "America/New_York" %}
+
+<p style="font-size:25px;color:#700;margin:0"><b>{{event.date}}</p>
 <p>{{event.content}}</p>
+{% endtimezone %}
 
 </div>
 </div>

@@ -11,7 +11,7 @@ class TextPage(models.Model):
 
     
 class Event(models.Model):
-    date = models.DateField()
+    date = models.DateTimeField()
     title = models.CharField(max_length=200)
     content = models.TextField()
     def __str__(self):
