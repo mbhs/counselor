@@ -66,6 +66,9 @@ header {
     transition: background-color 0.5s;
 }
 
+.nav-item-mobile-no-pad {
+
+}
 
 .nav.nav-pills .nav-link:hover {
     background-color: rgba(0, 0, 0, 0.07);

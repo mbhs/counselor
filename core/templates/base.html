@@ -18,7 +18,8 @@
 {% include 'core/header.html' %}
 
     <div id="mainContent" class="content">
-<div class="mobile-list-group float-left" id="mobileMenu" style="display:none">
+<div class="mobile-list-group float-left" id="mobileMenu" style="display:none;background-color:white">
+    
     <a id="homePageLink" href="{% url 'core:index' %}" class="list-group-item list-group-item-action">Home</a>
     <a id="eventsLink" href="{% url 'core:events' %}" class="list-group-item list-group-item-action">Events</a>
     {% for object in objects %}
