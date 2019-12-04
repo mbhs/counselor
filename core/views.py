@@ -33,6 +33,6 @@ def listEvents(request):
         d = d - datetime.timedelta(days=1)
 
     e = Event.objects.filter(date__gte=datetime.datetime.now().date())
-    f = list(Event.objects.filter(date__gte=datetime.datetime.now().date()))
+    f = Event.objects.filter(date__gte=datetime.datetime.now().date(),date__lte=datetime.datetime.now().date()+datetime.timedelta(days=7)).order_by('date')
     g = Event.objects.filter(date__gte=d+datetime.timedelta(days=7))
     return render(request,"core/calendar.html",{"objects":TextPage.objects.order_by('numId'),"today":e,"thisWeek":e,"upcoming":g})
