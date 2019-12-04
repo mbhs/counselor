@@ -49,6 +49,24 @@ header {
     transition: background-color 0.5s;
 }
 
+
+.nav-link-mobile {
+    border-radius: 0;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    transition: background-color 0.5s;
+}
+
+.nav-item-mobile {
+    border-radius: 0;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    transition: background-color 0.5s;
+}
+
+
 .nav.nav-pills .nav-link:hover {
     background-color: rgba(0, 0, 0, 0.07);
     transition: background-color 0.5s;
@@ -73,6 +91,15 @@ header {
 .list-group {
     background-color: #af0000;
     border: none;
+}
+
+.mobile-list-group {
+    padding-left:0px;
+    padding-right:0px;
+    width:100%;
+    z-index:100;
+    overflow: auto;
+    height: 100%;
 }
 
 .list-group-item.list-group-item-action:hover {

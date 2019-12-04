@@ -18,13 +18,22 @@
 {% include 'core/header.html' %}
 
     <div id="mainContent" class="content">
+<div class="mobile-list-group float-left" id="mobileMenu" style="display:none">
+    <a id="homePageLink" href="{% url 'core:index' %}" class="list-group-item list-group-item-action">Home</a>
+    <a id="eventsLink" href="{% url 'core:events' %}" class="list-group-item list-group-item-action">Events</a>
+    {% for object in objects %}
+    <a id="sidelink-{{object.id}}" href="{% url 'core:content' object.shortTitle %}" class="list-group-item list-group-item-action">{{ object.shortTitle }}</a>
+    {% endfor %}
+    <a href="#" class="list-group-item list-group-item-action external">Naviance</a>
+    <a href="#" class="list-group-item list-group-item-action external">College Board</a>
+</div>
             <div class="container-fluid ml-0 pt-3 mr-0" style="z-index:1"> 
                     <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 sidebarThing" id="sidebarThing" style="z-index:100">
                             {% include 'core/sidebar.html' %}
                         </div>
                         <div class="col-sm-9">
-                            {% block body %}
+                            {% block body %}c
                         
                             {% endblock %}
 			<div class="headerText" style="padding:10px">Maintained by the Montgomery Blair Webmasters under the supervision of Peter Hammond</div>
@@ -38,11 +47,47 @@
 
         
 <script>
+function showMenu() {
+if (document.getElementById("mobileMenu").style.position == "fixed") {
+document.getElementById("mobileMenu").style.position = "static";
+document.getElementById("mobileMenu").style.display = "none";
+
+} else {
+document.getElementById("mobileMenu").style.position = "fixed";
+document.getElementById("mobileMenu").style.display = "block";
+document.getElementById("mobileMenu").style.height = window.innerHeight - document.getElementById("mobileHeader").offsetHeight + "px";
+
+
+}
+}
+
 function headerPush() {
     document.getElementById("mainContent").style.marginTop = document.getElementById("mainHeader").offsetHeight + "px";
 }
-headerPush();
-document.getElementById("mainContent").onresize =headerPush;
+
+function mHeaderPush() {
+    document.getElementById("mainContent").style.marginTop = document.getElementById("mobileHeader").offsetHeight + "px";
+}
+
+if (window.innerWidth<600){
+    document.getElementById("mainHeader").style.display = "none";
+    document.getElementById("mobileHeader").style.display = "block";
+    document.getElementById("mobileMenu").style.display = "none";
+    mHeaderPush();
+    document.getElementById("mainContent").onresize =mHeaderPush;
+    document.getElementById("sidebarThing").style.display = "none";
+
+
+} else {
+    headerPush();
+
+    document.getElementById("mainContent").onresize =headerPush;
+
+}
+
+
+
+
 </script>
 
 </html>
