@@ -14,7 +14,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 
-<body onresize="headerPush();">
+<body onresize="pushHeaders();">
 {% include 'core/header.html' %}
 
     <div id="mainContent" class="content">
@@ -62,12 +62,24 @@ document.getElementById("mobileMenu").style.height = window.innerHeight - docume
 }
 }
 
+
+
 function headerPush() {
     document.getElementById("mainContent").style.marginTop = document.getElementById("mainHeader").offsetHeight + "px";
 }
 
 function mHeaderPush() {
     document.getElementById("mainContent").style.marginTop = document.getElementById("mobileHeader").offsetHeight + "px";
+}
+
+function pushHeaders() {
+if (window.innerWidth<600) {
+    mHeaderPush();
+} else {
+    headerPush();
+}
+
+
 }
 
 if (window.innerWidth<600){
