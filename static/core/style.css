@@ -15,6 +15,9 @@ body {
 
 .BLACKmenuLink:hover {background-color:#222222;color:#eeeeee;text-decoration:none;}
 
+.sidebarThing {
+    max-width: 100% !important;
+}
 
 header {
     position: fixed;
