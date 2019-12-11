@@ -52,11 +52,13 @@ function showMenu() {
 if (document.getElementById("mobileMenu").style.position == "fixed") {
 document.getElementById("mobileMenu").style.position = "static";
 document.getElementById("mobileMenu").style.display = "none";
+document.getElementById("mobileLogo").src="media/mbhs.png"
 
 } else {
 document.getElementById("mobileMenu").style.position = "fixed";
 document.getElementById("mobileMenu").style.display = "block";
 document.getElementById("mobileMenu").style.height = window.innerHeight - document.getElementById("mobileHeader").offsetHeight + "px";
+document.getElementById("mobileLogo").src="media/mbhs.png"
 
 
 }
