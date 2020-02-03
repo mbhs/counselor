@@ -29,3 +29,9 @@ class File(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     def __str__(self):
         return self.file.url
+
+class Announcement(models.Model):
+    text = models.TextField(blank=True)
+    date = models.DateTimeField()
+    def __str__(self):
+        return self.text
