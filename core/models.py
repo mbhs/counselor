@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class TextPage(models.Model):
@@ -35,3 +36,28 @@ class Announcement(models.Model):
     date = models.DateTimeField()
     def __str__(self):
         return self.text
+
+class Counselor(models.Model):
+    last = models.CharField(max_length=200)
+    first = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    phone = models.CharField(max_length=200,blank=True)
+    alphaRange = models.CharField(max_length=200)
+
+    bio = models.TextField(blank=True)
+    hours = models.TextField(blank=True)
+    interruptions = models.TextField(blank=True)
+
+    studentEmails = models.TextField(blank=True)
+
+
+    user = models.OneToOneField("auth.user",on_delete = models.SET_NULL,null=True)
+    def __str__(self):
+        return self.last + ", " + self.first
+
+class CounselorAnnouncement(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField(blank=True)
+    date = models.DateTimeField(default=timezone.now)
+    def __str__(self):
+        return self.title
