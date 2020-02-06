@@ -10,4 +10,5 @@ urlpatterns = [
     path('upload/', views.processFile, name='upload'),
     path('events/', views.listEvents, name='events'),
     path('<str:st>/', views.contentPage, name='content'),
+    path('counselors/<str:lastName>/', views.counselorInfo, name="counselor")
 ]

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from .models import *
 from .forms import *
@@ -36,3 +36,6 @@ def listEvents(request):
     f = Event.objects.filter(date__gte=datetime.datetime.now().date(),date__lte=datetime.datetime.now().date()+datetime.timedelta(days=7)).order_by('date')
     g = Event.objects.filter(date__gte=d+datetime.timedelta(days=7))
     return render(request,"core/calendar.html",{"objects":TextPage.objects.order_by('numId'),"today":e,"thisWeek":e,"upcoming":g})
+
+def counselorInfo():
+    return HttpResponse("ok")
