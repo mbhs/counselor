@@ -37,5 +37,5 @@ def listEvents(request):
     g = Event.objects.filter(date__gte=d+datetime.timedelta(days=7))
     return render(request,"core/calendar.html",{"objects":TextPage.objects.order_by('numId'),"today":e,"thisWeek":e,"upcoming":g})
 
-def counselorInfo():
+def counselorInfo(request, lastName):
     return HttpResponse("ok")
