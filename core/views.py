@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 from .models import *
 from .forms import *
 import datetime
@@ -16,6 +19,9 @@ def eventForm(request):
         return
     return render(request,"core/addForm.html",{"objects":TextPage.objects.order_by('numId')})
 
+@login_required
+def staffView(request):
+    return render(request,"core/staff.html",{"objects":TextPage.objects.order_by('numId'),"events":Event.objects.order_by("date")})
 
 def processFile(request):
     

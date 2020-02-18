@@ -56,7 +56,7 @@ ROOT_URLCONF = 'counseling.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +128,7 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, "media")
+
+LOGIN_REDIRECT_URL = 'staffView'
+
+LOGOUT_REDIRECT_URL = '/'
