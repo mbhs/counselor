@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <!---<p><a href="{% url 'logout' %}">logout</a></p> -->
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-{% endif %}
+  <h2>You are logged in as {{ user.username }}.</h2>
+  <h4><a href="{% url 'core:logout' %}">Click to logout</a></h4>
+  <!-- Need to add functions for adding events, announcements, etc. -->
 {% endblock %}

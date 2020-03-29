@@ -18,16 +18,6 @@
 {% include 'core/header.html' %}
 
     <div id="mainContent" class="content">
-<div class="mobile-list-group float-left" id="mobileMenu" style="display:none;background-color:white">
-    
-    <a id="homePageLink" href="{% url 'core:index' %}" class="list-group-item list-group-item-action">Home</a>
-    <a id="eventsLink" href="{% url 'core:events' %}" class="list-group-item list-group-item-action">Events</a>
-    {% for object in objects %}
-    <a id="sidelink-{{object.id}}" href="{% url 'core:content' object.shortTitle %}" class="list-group-item list-group-item-action">{{ object.shortTitle }}</a>
-    {% endfor %}
-    <a href="#" class="list-group-item list-group-item-action external">Naviance</a>
-    <a href="#" class="list-group-item list-group-item-action external">College Board</a>
-</div>
             <div class="container-fluid ml-0 pt-3 mr-0" style="z-index:1"> 
                     <div class="row">
 					{% block top %}
@@ -42,9 +32,15 @@
                             {% endblock %}
                         </div>
                     </div>
+                    <div class="row">
+                        <br><br>
+                        <!-- Spacing tags, so the footer doesn't touch the sidebar -->
+                    </div>
+                    <div class="row">
+                        {% include 'core/footer.html' %}
+                    </div>
             </div>
     </div>
-    {% include 'core/footer.html' %}
 </body>
 
         

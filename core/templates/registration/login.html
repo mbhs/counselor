@@ -1,10 +1,105 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block body %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title|default:"MBHS Counseling" }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/style.css' %}">
+    <!---Load Bootstrap, JQuery, Ajax, and Javascript-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+<body onresize="pushHeaders();">
+{% include 'core/header.html' %}
+
+    <div id="mainContent" class="content">
+            <div class="container-fluid ml-0 pt-3 mr-0" style="z-index:1"> 
+                        <div class="col">
+                          
+                          <!-- Actual Login Stuff -->
+                          <h2>Login</h2>
+                          <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit">Login</button>
+                          </form>
+                          <!-- End of actual login stuff -->
+                        
+                        </div>
+                    </div>
+                    <div class="row">
+                        <br><br>
+                        <!-- Spacing tags, so the footer doesn't touch the sidebar -->
+                    </div>
+                    <div class="row">
+                        {% include 'core/footer.html' %}
+                    </div>
+            </div>
+    </div>
+</body>
+
+        
+<script>
+function showMenu() {
+if (document.getElementById("mobileMenu").style.position == "fixed") {
+document.getElementById("mobileMenu").style.position = "static";
+document.getElementById("mobileMenu").style.display = "none";
+document.getElementById("mobileLogo").src="media/mbhs.png"
+
+} else {
+document.getElementById("mobileMenu").style.position = "fixed";
+document.getElementById("mobileMenu").style.display = "block";
+document.getElementById("mobileMenu").style.height = window.innerHeight - document.getElementById("mobileHeader").offsetHeight + "px";
+document.getElementById("mobileLogo").src="media/mbhs.png"
+
+
+}
+}
+
+
+
+function headerPush() {
+    document.getElementById("mainContent").style.marginTop = document.getElementById("mainHeader").offsetHeight + "px";
+}
+
+function mHeaderPush() {
+    document.getElementById("mainContent").style.marginTop = document.getElementById("mobileHeader").offsetHeight + "px";
+}
+
+function pushHeaders() {
+if (window.innerWidth<600) {
+    mHeaderPush();
+} else {
+    headerPush();
+}
+
+
+}
+
+if (window.innerWidth<600){
+    document.getElementById("mainHeader").style.display = "none";
+    document.getElementById("mobileHeader").style.display = "block";
+    document.getElementById("mobileMenu").style.display = "none";
+    mHeaderPush();
+    document.getElementById("mainContent").onresize =mHeaderPush;
+    document.getElementById("sidebarThing").style.display = "none";
+
+
+} else {
+    headerPush();
+
+    document.getElementById("mainContent").onresize =headerPush;
+
+}
+
+
+
+
+</script>
+
+</html>
